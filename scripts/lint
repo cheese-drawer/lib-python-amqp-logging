@@ -23,7 +23,7 @@ eval "$(direnv export bash)"
 function lint {
     echo ""
     echo "PYLINT"
-    pylint amqp_worker/*
+    pylint amqp_logging/*
     lint_result=$?
     echo ""
 }
@@ -31,7 +31,7 @@ function lint {
 function code {
     echo ""
     echo "PYCODESTYLE"
-    pycodestyle amqp_worker/*
+    pycodestyle amqp_logging/*
     code_result=$?
     echo ""
 }
@@ -39,7 +39,7 @@ function code {
 function doc {
     echo ""
     echo "PYDOCSTYLE"
-    pydocstyle amqp_worker/*
+    pydocstyle amqp_logging/*
     doc_result=$?
     echo ""
 }
