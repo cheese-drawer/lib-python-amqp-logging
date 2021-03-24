@@ -1,0 +1,15 @@
+version: "3" # this is the Docker Compose specification
+               # version, not the app stack version
+
+services:
+
+  broker:
+    image: rabbitmq:3-management-alpine
+    restart: always
+    hostname: broker
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: test
+      RABBITMQ_DEFAULT_PASS: pass
