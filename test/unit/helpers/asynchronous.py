@@ -1,6 +1,7 @@
 """Helpers for testing asynchronous code."""
 
 import asyncio
+from functools import wraps
 from typing import Any, Awaitable, Callable
 from unittest.mock import MagicMock
 
@@ -18,6 +19,7 @@ def async_test(
     test: Callable[[Any], Awaitable[None]]
 ) -> Callable[[Any], None]:
     """Decorate an async test method to run it in a one-off event loop."""
+    @wraps(test)
     def wrapped(instance: Any) -> None:
         asyncio.run(test(instance))
 
