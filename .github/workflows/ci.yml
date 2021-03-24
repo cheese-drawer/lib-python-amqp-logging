@@ -75,6 +75,5 @@ jobs:
     - name: Test
       run: |
         docker-compose  up -d
-        ./scripts/manage sync noprompt
         ./scripts/test e2e
         docker-compose  down

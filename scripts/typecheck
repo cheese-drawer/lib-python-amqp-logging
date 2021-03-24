@@ -24,9 +24,9 @@ function check {
     echo "Starting type checks..."
     echo ""
 
-    echo "Checking ./amqp_worker..."
+    echo "Checking ./amqp_logging..."
     echo ""
-    mypy amqp_worker
+    mypy amqp_logging
     mypy_src_result=$?
 
     if [ $mypy_src_result != 0 ]; then
